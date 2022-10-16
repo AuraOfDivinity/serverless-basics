@@ -18,7 +18,7 @@ async function createAuction(event, context) {
 
   // Have to follow it up with .promise so that it returns a promise. the default implementation is using callbacks.
   await dynamodb.put({
-    TableName: 'AuctionsTable',
+    TableName: process.env.AUCTIONS_TABLE_NAME,
     Item: auction
   }).promise()
 
